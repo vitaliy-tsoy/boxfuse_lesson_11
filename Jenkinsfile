@@ -20,8 +20,8 @@ pipeline {
     stage('Build And Push Docker Image') {
       steps {
         sh 'docker build -t app_image .'
-        sh 'docker tag app_image vitaliy-tsoy/boxfuse_app:2.0.0'
-        sh  'docker push vitaliy-tsoy/boxfuse_app:2.0.0'
+        sh 'docker tag app_image vittsoy73/boxfuse_app:2.0.0'
+        sh 'docker push vitaliy-tsoy/boxfuse_app:2.0.0'
       }
     }
     stage('Run docker on prod-server') {

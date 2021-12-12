@@ -1,10 +1,9 @@
 pipeline {
   agent {
-          docker {
-             image 'vitaliy-tsoy/agent'
-             args '-v /var/run/docker.sock:/var/run/docker.sock -u root '
-          }
-
+    docker {
+      image 'vitaliy-tsoy/agent'
+      args '-v /var/run/docker.sock:/var/run/docker.sock -u root'
+        }
   }
 
   stages {
@@ -12,7 +11,6 @@ pipeline {
     stage('Checkout code') {
       steps {
         git 'https://github.com/vitaliy-tsoy/boxfuse_lesson_11.git'
-       
       }
     }
 
@@ -41,4 +39,3 @@ pipeline {
       }
     }
   }
-}

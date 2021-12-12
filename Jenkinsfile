@@ -2,6 +2,7 @@ pipeline {
   agent {
     docker {
       image 'vittsoy73/agent'
+      registryCredentialsId '72245b2a-b07d-41b9-aaa4-676f76897ddf'
       args '-v /var/run/docker.sock:/var/run/docker.sock -u root'
     }
   }

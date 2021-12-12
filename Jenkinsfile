@@ -1,7 +1,7 @@
 pipeline {
   agent {
     docker {
-      image 'vitaliy-tsoy/agent'
+      image 'vittsoy73/agent'
       args '-v /var/run/docker.sock:/var/run/docker.sock -u root'
     }
   }

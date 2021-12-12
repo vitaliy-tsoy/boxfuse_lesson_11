@@ -23,13 +23,13 @@ pipeline {
         sh  'docker push vitaliy-tsoy/boxfuse_app:2.0.0'
       }
     }
-    stage('Run docker on instance-3') {
+    stage('Run docker on prod-server') {
       steps {
-             sh 'ssh-keyscan -H instance-3 >> ~/.ssh/known_hosts'
-             sh """ssh root@instance-3<< EOF 
+             sh 'ssh-keyscan -H prod-server >> ~/.ssh/known_hosts'
+             sh '''ssh root@prod-server << EOF 
              docker run -d -p 8081:8080 vitaliy-tsoy/boxfuse_app:2.0.0
              exit
-             EOF"""
+             EOF'''
       }
     }
   }
